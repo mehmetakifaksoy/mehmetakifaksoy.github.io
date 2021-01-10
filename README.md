@@ -1,2 +1,3 @@
-# mehmetakifaksoy.github.io
-this is my personel website
+Mehmet Akif AKSOY 
+
+Siber Güvenlik alanında yazmış olduğum yazılar..

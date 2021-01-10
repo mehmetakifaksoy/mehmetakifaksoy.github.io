@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "Ağ Bileşenleri ve Mimarisi"
+categories: Teknoloji
+---
+
+Ağ (Network): Birbirleri ile belirli kurallar çerçevesinde iletişim kurabilen cihazların oluşturduğu yapıdır.
+
+Ağ Sistemlerinin Yararları
+
+Program Paylşaımı: Bir ağ ortamında tüm kullanıcı merkezi bir bilgisayar kurulmuş olan programı kullanabilirler.
+Dosya Paylaşımı : Kullanıcılar işlerini yaparken kullandıkları dosya kaynaklarını ağdaki diğer bilgisayarlardan izinler dahilinde elde edebilirler.
+Yazıcı Paylaşımı: Ağdaki bir çok kullanıcı ortak bir yazıcıyı kullanabilirler. Maliyet açısından önemlidir.
+Güvenlik : Bir ağa bağlanıp kaynakları kullanmak isteyenlerin kimlik doğrulaması gerekir ve ağdaki kaynakları yetkileri dahilinde kullanabilir.
+Merkezi Yönetim : Bir ağdaki tüm cihazlar ve bilgisayarlar sistem yöneticileri tarafından uzaktan yönetebilirler
+
+
+Ağ Bileşenleri
+
+-Yazılım ve donanımlardan oluşur.
+  Yazılım ; işletim sistemleri iletişim protokelleri ve ağ programlarınından oluşur.
+  Donanım ; kablo,switch,router,bilgisayar, NIC gibi donanımları oluşturur.
+  
+  Ağ ortamında çalışabilen işletim sistemleri 2 farklı rol üstlenir.
+  
+
+1-)Sunucu(Server) : Ağ kaynaklarını elinde tutan ve diğer bilgisayarları yetkiler dahilinde sunan işletim sistemleridir. Ör: Ubuntu Server,CentOS, W2012R2
+ 
+ 
+2-)İstenci(Client) : Sunulan kaynakları erişebilen işletim sistemleridir. Ör: Windows 10 pro
+  
+  
+ Ağ Cihazları (Network Devices)
+ 
+ Bir ağı oluşturmak için kablo kart ve bilgisayar yeterlidir.
+ 
+ Fakat ağ genişlemeye başladığında bir takım cihazların da yardımı gerekir.
+ 
+ ör: 
+ 
+ 10 bilgisayarı birbirine bağlamak için her bir bilgisayara 10 kart takılması gerekir. Bu mümkün olamaz 
+ Veya bu 10 bilgisayardan biri bile 500 metre uzaklıkta ise sinyal taşımak mümkün olamaz.
+ 
+ Bu cihazlar ağa mesafe performans güvenlik gibi özellikler katarlar.
+ 
+
+
+  Temel Ağ Donanımları
+  
+  Ağ Arayüz Kartı (Network Interface Card)
+  
+  Ağa bağlanmak isteyen her cihaz ve bilgisayarda olması zorunlu bir donanımdır.
+  Ağa gönderilecek olan veriyi elektrik sinyaline dçmüştürür ve kabloya iletir.
+  Sayısal-mantıksal çevrimler başarım kontrolü performans yönetimi gibi özelliklere sahiptir.
+  ISA ve PCI slotlarına takılabilirler
+  Günümüzde anakarta tümleşik (On-Board) de üretilir.
+  Hızları teknolojileri ve kablo tiğine bağlıdır.
+  Kullanılan kablo cinsleri için farklı konnektör tiplerine sahiptir.
+  Ethernet NIC'ler hızlarına göre 10Mbps(Ethernet) ,  100Mbps(FastEthernet) , 1Gbps(GigabitEthernet)
+  
+  Repeater(Tekrarlayıcı) ve Hub(Merkez)
+  
+  Ağda kullanılan kabloların maksimum erişim mesafeleri vardır.
+  Ör: UTP kablo sinyali max 100 metre mesafeyi taşıyabilir. 
+  
+  Repeater veya Hub azalan sinyal gücünü yükselterek daha uzak mesafeye veri iletimini sağlarlar.
+  
+  Repeater  tek portluk
+  Hub çok portlukdur.
+  
+  Bu kablosuz yayınlar için de geçerlidir.
+  
+  Ağ Anahtarı (Network Switch)
+  
+Bilgisayar ve diğer ağ donanımları birbirilerine bağlanmasını sağlarlar.
+Hub ve Repeaterlardan farklı olarak kendisine bağlı oan cihazların MAC adreslerini bilmesi ve iletişimi bu MAC adreslerine göre adresleme/anahtarlamasıdır.
+Gelen verileri hedefe tablosuna (MAC ARP Table) bakarak gönderir. Tablosunda yoksa herkese gönderir. (Broadcast)
+OSI ve TCP/IP katmanlarının L2 veya L3 üstünde çalışır.
+Switchler komut arayüzü (CLI) veya web arayüzü(HTTP) üzerinden configuration yapılabilir.
+
+Router (Yönlendirici)
+
+Geniş ağlarda ve internette kullanılır.
+IP adresi verilebilir
+ve networkleri route etmek için kullanılan cihazlardır.
+
+Modem (AP) AccessPoint
+
+Evlerde kullanıdığmız modemlerdir. Bunlara sektör de AP'denir.
+DSL hatları üzerinden kullanılır telefon hatları vardır ama eski bir teknolojidir artık ethernetle bağlanma tercih edilir ya da içindeki wifi yayıcı ile SSID ile giriş yapabilirsiniz.
+
+Güvenlik Duvarı(Firewall)
+
+Güvenlik duvarı network için cidden önemli bir teknolojidir sizi iç ve dış siber saldırılardan korumayı sağlayan bir teknolojidir. Firewall iyi bilinmesi gerekmektedir.
+Firewall yönetmek için de network iyi bilmek gerekir. 
+Donanımsal ve Yazılımsal olarak 2 tiptir.
+Dışardan ve içerden gelen tehditlerin bloklanmasını sağlar bu yüzden kritik bir noktadır.
+
+
+Ağ Kabloları (Network Cables)
+
+Twisted Pair Kablolar
+
+Bir yerel ağda bilgisayar ile switch arasında ve telefon bağlantılarında kullanılabilir.
+Birbirlerine ikili(pair) olarak sarılmış kablolardan oluşurlar.
+RJ45 jack kullanılır.
+
+1-) Unshielded Twisted Pair (UTP) :
+
+Pairlerin etrafında koruyucu yoktur. Elektromanyentik alandan etkilenirler. Daha sonra esnek oldukları için tercih edilirler.
+
+2-) Sheilded Twisted Pair(STP):
+
+Hem pairlerin hem de kablonun etrafı metal bir koruyucu ile sarılıdır. Elektromanyetik alandan etkilenmezler.
+
+Kablo çakma işlemi ile alakalı videolar mevcuttur detaylı öğrenmek isteyen izleyebilir.

@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Ağ Servisleri nelerdir?"
+categories: Teknoloji
+---
+
+Herkese Selamlar bu yazım da ağ servislerinden dilimin döndüğünce bahsetmeye çalışacağım.
+
+Ağ Servisleri kullanıcılar ve bilgisayarlara hizmet eden servislerdir.
+
+ör: DHCP DNS ve NAT birer ağ servisleridir.
+
+DHCP (Dynamic Host Configuration Protocol) talep eden bilgisayarlara ağa katılması içi IP dağıtacaktır.
+  -DHCP bir sunucudur. Fiziksel sunucuların üstüne kurulan bir sunucudur görevi de network aralığı eklenir ve bu network aralığını kaç adet cihaz varsa IP'ler o 
+  cihazlara otomatik olarak dağıtmasını sağlar.
+  -Manuel olarak da IP'leri cihazlara verebiliriz ama tercihen otomatik IP almasını sağlar.
+  -evinizde kullandığınız modem(AP)'de DHCP sunucusu vardır ve telefonunuz Televizyon ya da internete bağlı herhangibi bir cihaz DHCP server'dan IP alır ve bu şekilde
+  internete çıkarsınız genel olarak DHCP'nin görevinden bahsetmiş oldum.
+
+DNS (Domain Name Service) isim çözümlemesine yardımcı olan servistir
+-Bilgisayalar birbirleri ile sadece IP'ler ile haberleşir.
+-www.google.com adresi bir şey ifade etmez 010101 gibi binary sistemlerle anlaşır ama insan için daha kullanışlı olan DNS'dir.
+-Bu isimlerin IP karşılıkları gerekmektedir. İsim çözümlemesi yapılmalıdır. Bunları DNS sunucuları yaparlar.
+
+NAT (Network Address Translation) ise IP çevrimleri yaparak bilgisayarların dış dünyaya açılmasını sağlayacaktır.
+  -public ve private IP ağlarının IP çevirme işini yapar.
+  -iç network'den dış network'e çıkarkan IP çevirme işlemine NAT denir. Bunu sebebi ise public dünyaya çıkarken private IP'ler yetersiz olduğu için sayı anlamında o yüzden public ağa geçmek için NAT işlemine gerek vardır bu şekilde de dış dünyaya çıkabiliriz.
+  
+  genel olarak ağ servislerinden bu şekilde bahsetmiş oldum dilim döndüğünce umarım beğenmişsinizdir  :=)

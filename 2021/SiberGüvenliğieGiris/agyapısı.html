@@ -1,0 +1,197 @@
+<html><head>
+    <title>vx-underground - home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <meta charset="utf-8">
+        <style>
+        body {
+          font-size: 12px;
+          font-family: ubuntu mono;
+          background-color: black;
+          color: white;margin:0;}
+        a {
+          color: white;}
+        </style>
+        </head>
+        <body>
+            <center>
+        
+            <pre>                                                                         
+             
+    █████████████████████████████████████████████████████████
+    █─▄▄▄▄█▄─▄▄─█─▄▄▄─█▄─▀█▀─▄█▄─▄▄─█─█─█▄─▀█▀─▄█▄─▄▄─█─▄─▄─█
+    █▄▄▄▄─██─▄█▀█─███▀██─█▄█─███─▄█▀█─▄─██─█▄█─███─▄█▀███─███
+    ▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▀▄▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▀▄▄▄▀▀     
+    
+    <br>
+    <a href="archive.html">archive</a> | <a href="https://mehmetakifaksoy.github.io">code</a> |  <a href="apts.html">collection</a> | <a href="samples.html">samples</a> | <a href="contact.html">contact</a>  
+    <br>
+
+    Ağ Mimarisi (Network Architecture)
+
+    Bir ağın mimarisini belirleyen 2 temel özellik vardır.
+    
+    Ağ Topolojisi : Cihazların kablo ve bağlantı yerleşim haritası düşünülebilir.
+    Ağ Büyüklüğü: Ağlar büyüklüklerine göre ikiye ayrılır 
+    
+    
+    LAN ve WAN 
+    
+    LAN : LAN'lar yüksek hızlı güvenilir ve küçük bir alana yayılmış olan lokal ağlardır. Ör: şirket içindeki ağdır.
+    WAN : Coğrafi olarak birbirinden uzak LAN'ların birleşmesiyle oluşan ağdır. Ör: internet ağı
+    
+    1-) Bus Topoloji : Bütün cihazların birbirine bağlanmak için hepsine uğrayan doğrusal bir kablo ile sağlanır.
+    2-) Star Topoloji : Bilgisayarların switch router gibi cihazlar ile birbirine bağlandıkları yapıdır.
+    3-) Ring Topoloji : Fiziksel olarak Star'a benzer ama mantıksal olarak Ring'tir. Veriler ağ üzerinde halka şeklinde bir döngüye sahiptir.
+    
+    Ağ Protokolü
+    
+    Ağda çalışan cihazların iletişim kurması gereken kurallardır. İnsanların iletişim kurması için de bir dil gerekir buna benzetebiliriz. Ağ protokolünü de cihazların birbiri ile haberleşmesi için yapılan protokoldür.
+    
+    Günümüzde en yaygın kullanılan protokol TCP/IP'(Transmission Control Protocol) dir. tcp/ip de osi katmanı içindedir.
+    
+    ve ayrıca OSI katmanı vardır ki OSI katmanlarının bilmeyen bir network sistemcisi yoktur eğer network sistemcisi olacaksanız osi referans modelini çok iyi bilmeniz gerekmektedir. Şimdi OSI modelini inceleyelim.
+    
+    OSI(OPEN SYSTEM INTERCONNECTION) Referans Modeli
+    
+    Network iletişim de ortak bir dil olarak 1984 yılında kullanılmaya başlanmıştır. 
+    7 katmandan oluşur.
+    Her bir katman alt katmanlardan hizmet alır üst katmanda hizmet verir.
+    
+    7- Application Layer (Uygulama Katmanı)
+    
+    E-posta dosya transferi web erişimi gibi ağ hizmetleri sağlayan servisleri destekler
+    Kullanıcı google.com'u çağırdığında presentation katmanına bildirir sadece.
+    
+    6- Presentaion Layer ( Sunum Katmanı)
+    Application katmanından gelen kullanıcının isteklerini yourumlayıp alt katmanlara hazırlanması için işe koyulur.
+    Dönüştürme işlemlerini yapar
+    Şifreleme çözme sıkıştırma karater seti değişimi grafik komutlarının yorumlanması gibi işler burada yapılır
+    5- Session Layer ( Oturum Katmanı)
+    Diğer bilgisayarlar ile iletişim sağlandığında uygulamalar arasında oturum burada açılır.
+    Karşılıklı iki uygulamanın birbirini bulduğu katmandır.
+    Bu oturum kopmaması stabil olması oturumda veri senkronizasyonu gibi görevleri vardır. Çakışmaları önler.
+    İletişimde problem olması halinde gönderilen verinin baştan komple gönderilmemesi için veriye checkpointler koyar. Aksaklık halinde ne kadar gönderilmediği tespit edilerek sadece o kısım gönderilir.
+    
+    
+    4-) Transport Layer ( Ulaşım Katmanı)
+    
+    Session katmanından gelen verileri network katmanın daha iyi anlayabileceği şekilde küçük parçalara böler.
+    Bu parçalara segmenet adı verilir. Segment'leme görevi buranındır.
+    Alt ve üst katmanların eş zamanlı çalışabilmesini de sağlar.
+    Web'de gezerken aynı anda download yapılabilmesinden bu katman sorumludur.
+    TCP ve UDP bu katmanda işlenir
+    
+    3-) Network Layer ( Ağ Katmanı)
+    
+    En önemli katmandır 
+    Paketlerin hangi route üzerinden gideceğini belirler
+    Paketin hedefe ulaşımında birden fazla rota varsa doğrusuna karar vermekle sorumludur.
+    Bu yüzden IP adresi burada girilir.
+    Verinin kalitesi(Qos-Quality of Service) de burada belirlenir.
+    Segment boyutlarını Data-Link katmanının daha iyi anlayabileceği daha küçük segmentlere böler
+    
+    2-) Data-Link Layer ( Veri Bağlantısı Katmanı)
+    
+    Gönderilen verilerin elektrik sinyallerine dönüştürülüp kabloya iletilmesini ve tersi yöndeki işlemi gerçekleştiren katmandır.
+    MAC bilgisi burada girilir.
+    Network katmanında gelen segmentleri Fiziksel katmanda yola çıkabilecek şekilde framelere böler
+    Frame tipi gibi bilgiler burada eklenir.
+    Yolda bozulabilecek framleri tespit etmen için framelere CRC(Cyclic Redundancy Check) bilgileri ekler
+    Karşı bilgisayarda CRC bilgisi doğru okunuyorsa frame bozulmamıştır
+    
+    1-) Physical Layer ( Fiziksel Katman)
+    
+    Elektriksel optik veya kablosuz sinyalleri A noktasından B noktasına iletmekle sorumludur.
+    Sadece bitlerin bir bilgisayardan diğerine ulaşmasıyla ilgilenir.
+    Paketi teslim etmekle sorumludur içeriğiyle ilgilenmez
+    Bu katmanda pakete paketin hangi sinyalle taşınacağı bitlerin ne şekilde dizileceği konnektörlerdeki kaç pin ile çalışılacağı adaptörün ne zaman veri gönderip alacağı
+    teslimatın başarı durumu gibi detaylar tanımlanır pakete yazılır.
+    
+    
+    Şimdi TCP ve UDP nelerdir onlardan biraz bahsedeceğim dilim döndükçe :)
+    
+    TCP nedir?
+    
+    Bağlantı temelli güvenilir bir iletim protokolüdür.
+    Veri iletimine başlamadan önce gönderici ve alıcı arasında anlaşma sağlar.
+    Alıcıya ulaşmayan veriyi tekrar yollar
+    TCP kontrollü bir iletim sağlar yani gönderici ve alıcı arasında bir anlaşma sağlar bu anlaşmaya 3-way-handshake (Üçlü el sıkışma) denir. 
+    TCP'de gönderilen paketler güvenilir ve kontrol edilir.
+    
+    UDP nedir?
+    Bağlantı temelli değildir ve kontrol mekanizmaları içermez 
+    Kontroller yapmadığı için hızlıdır sürekli paketler gönderir TCP'den hızlıdır ama TCP kadar güvenilir değildir
+    ses video paketleri için UDP kullanılır ör: Youtube videolarının izlenmesi UDP'ye bir örnektir.
+    
+    TCP'den bahsettikten sonra diğer protokellerden de bahsetmeye devam ediyorum.
+    
+    ARP(Adress Resolution Protocol)
+    
+    Ağ cihazlarının 2 adresi vardır.
+    
+    1-) MAC Adresi : Fiziksel adresidir. Ağ kartlarının ROM belleğine üreticisi tarafından yazılır. 48bitlik hexadecimal (on altılık) bir sayıdır.
+    
+    2-) IP Adresi : Mantıksal adresidir. Cihazlara yöneticiler tarafından yazılır. 
+    DHCP tarafından otomatik olarak da atanabilir manual olarak da IP cihazlara verirlebilir. 
+    IP adresleri sayesinde cihazlar birbirleriyle haberleşmeyi sağlar.
+    DHCP'den ilerleyen kısımlarda bahsedeceğim ama genel olarak anlatmak gerekirse Dynamic Host Configuration Protocol olarak geçer ve network aralıkları belirlenir ve DHCP bir server'a kurulur ve bundan sonra da bu NETWORK aralığında o network'e bağlı cihazlara IP otomatik bir şekilde tanımlar.
+    
+    ICMP (Internet Control Message Protocol)
+    
+    Sorun gidermek ve hataları tespit etmek için kullanılır.
+    
+    1-)Ping : iki farklı cihazın birbiri ile haberleşmesini sağlayan protokoldür. birbirlerine hayatta mısın? diye bir soru sorarlar ve eğer ikisi de hayatta ise birbirleri ile haberleşebilirler.
+    
+    2-)Tracert kaynaktan hedef IP'ye giderken geçilen IP ve cevap verme sürelerini gösterir.
+    
+    
+    IP nedir? 
+    
+    Internet Protokolü olarak geçer ve cihazların almış olduğu bir kimlik diyebiliriz.
+    
+    IP adresleri 2 kısımdan oluşur
+    
+    a-) NetworkID: network'ün kendine ait ID'sidir. Bu ID cihazların hangi ağda olduğunu belirtir. Aynı anda ağda olan cihazların network ID'leri aynı olmak zorundadır
+    
+    b-) HOST ID : cihazların ağda kendisini tanımlayan ID'dir.
+    
+    IP'ler 2 kısımda incelenir.
+    
+    Public ve Private IP olacak şekilde 
+    
+    Public IP adresleri 
+    
+    10.0.0.0 – 10.255.255.255
+    172.16.0.0 – 172.31.255.255
+    192.168.0.0 – 192.168.255.255
+    
+    Genel olarak local ortamlarda kullandığımız IP adresleri bu aralıklar dışında kalan IP adresleri Public veya Real, yani gerçek IP’lerdir.
+    (Not: 224.0.0.0 ve sonrası özel amaçlı kullanım içindir.)
+    
+      
+    
+    IP adreslerinin belli kuralları vardır.
+    
+    Kural 1 : Bir IP adresine 0'dan küçük 255'ten büyük rakam olmaz
+    Kural 2 : Host ID'de 1'den küçük 254'ten büyük rakam olmaz
+    Kural 3 : 224'den büyük rakalı IP'leri de kullanamazsın! 224 ila 255 arasındaki bu aralık networksel işllemler ve otomatik iletişimler içindir.
+    Kural 4 : 127.0.0.1 IP'sini de kullanamazsınız bu IP bilgisayarların kendisine tahsistir Network'teki yerinden bağımsız olarak her bilgisayar kendisini temsil eder.
+    
+    
+    
+    
+    IP Adreslerinin birbirleriyle haberleşmesi 
+    
+    Bir ağda 3 tür haberleşeme vardır.
+    
+    1-) Unicast
+      Bir cihazdan sadece bir cihaza yapılan iletim
+    2-) Multicast
+      Bir cihazdan belirli bir grup cihaza yapılan iletim
+    3-) Broadcast
+      Bir cihazdan diğer tüm cihazlara yapılan iletim. Network'teki son host IP'si (255) broadcast için kullanılır
+    4-) Anycast
+      Anycast ya da her yöne yayın, adreslerin birden fazla coğrafi konumdaki birden fazla sunucuya ya da cihaza atanması ile mevcut yönlendirme protokol isteklerinin hangi sunucuya ya da cihaza iletileceğine karar verildiği bir tekniktir. 
+      
+     
+    
